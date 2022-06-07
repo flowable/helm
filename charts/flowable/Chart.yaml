@@ -3,8 +3,8 @@ name: flowable
 version: 6.7.3-snapshot.3
 description: A Flowable Helm chart for Kubernetes
 appVersion: 6.7.2
-home: https://flowable.org
-icon: https://flowable.org/docs/img/logo.png
+home: https://www.flowable.com/open-source
+icon: https://www.flowable.com/open-source/docs/img/logo.png
 sources: 
   - https://github.com/flowable/flowable-engine/
 keywords:
@@ -14,3 +14,17 @@ keywords:
   - DMN
 annotations:
   artifacthub.io/prerelease: "true"
+  artifacthub.io/images: |
+    - name: Flowable UI
+      image: flowable/flowable-ui:6.7.2
+    - name: Flowable REST
+      image: flowable/flowable-rest:6.7.2
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Flowable OSS repository
+      url: https://link1.url
+    - name: Flowable OSS website
+      url: https://www.flowable.com/open-source
+  artifacthub.io/signKey: |
+    fingerprint: B3B09108406A7DFE92757807A79624786AE252EB
+    url: https://keybase.io/flowable_oss/pgp_keys.asc
