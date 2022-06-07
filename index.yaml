@@ -22,6 +22,40 @@ entries:
     - https://github.com/flowable/helm/releases/download/flowable-6.7.3-snapshot.3/flowable-6.7.3-snapshot.3.tgz
     version: 6.7.3-snapshot.3
   - annotations:
+      artifacthub.io/images: |
+        - name: Flowable UI
+          image: flowable/flowable-ui:6.7.2
+        - name: Flowable REST
+          image: flowable/flowable-rest:6.7.2
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Flowable OSS repository
+          url: https://link1.url
+        - name: Flowable OSS website
+          url: https://www.flowable.com/open-source
+      artifacthub.io/prerelease: "true"
+      artifacthub.io/signKey: |-
+        fingerprint: B3B09108406A7DFE92757807A79624786AE252EB
+        url: https://keybase.io/flowable_oss/pgp_keys.asc
+    apiVersion: v2
+    appVersion: 6.7.2
+    created: "2022-06-07T10:46:04.30941023Z"
+    description: A Flowable Helm chart for Kubernetes
+    digest: a255288aa5d1ad614db854ac52d2a47dc5bcb951270afcad35d040b1784a66c9
+    home: https://www.flowable.com/open-source
+    icon: https://www.flowable.com/open-source/docs/img/logo.png
+    keywords:
+    - flowable
+    - BPMN
+    - CMMN
+    - DMN
+    name: flowable
+    sources:
+    - https://github.com/flowable/flowable-engine/
+    urls:
+    - https://github.com/flowable/helm/releases/download/flowable-6.7.3-snapshot.3/flowable-6.7.3-snapshot.3.tgz
+    version: 6.7.3-snapshot.3
+  - annotations:
       artifacthub.io/prerelease: "true"
     apiVersion: v2
     appVersion: 6.7.2
@@ -126,4 +160,4 @@ entries:
     urls:
     - https://flowable.github.io/helm/flowable-6.5.0.tgz
     version: 6.5.0
-generated: "2022-06-07T09:41:20.911201222Z"
+generated: "2022-06-07T10:46:04.309459329Z"
