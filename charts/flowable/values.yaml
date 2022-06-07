@@ -6,13 +6,13 @@ database:
   name: flowable
   username: flowable
   password: flowable
-  # specify to overwrite dynamic template values 
+  # specify to overwrite dynamic template values
   # datasourceDriverClassName:
   # datasourceUrl:
 cloudSql:
   enabled: false
   # Google Cloud SQL instance connection name
-  # instanceConnectionName: 
+  # instanceConnectionName:
   # Google credentials file name stored as secret in the cluster
   credentials: cloudsql-credentials.json
 
@@ -24,7 +24,7 @@ ingress:
   # To enable LetsEncrypt signed certificates rather than self-signed ones
   # you must deploy a ClusterIssuer object and specify the privateKeySecretRef's
   # name here
-  #clusterIssuer: "letsencrypt-prod"
+  # clusterIssuer: "letsencrypt-prod"
 
 # Enable either Flowable UI or Flowable REST
 ui:
