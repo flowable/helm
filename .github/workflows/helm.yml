@@ -38,6 +38,7 @@ jobs:
             uses: helm/chart-releaser-action@v1.4.0
             with:
               config: cr.yaml
+              charts_dir: charts
               # charts_repo_url: https://flowable.github.io/helm/
             env:
               CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
