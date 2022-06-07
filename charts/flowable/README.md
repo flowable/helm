@@ -15,7 +15,7 @@ helm install my-flowable flowable-oss/flowable
 To install the *local* chart with the release name `my-flowable`:
 
 ```console
-helm install my-flowable ./flowable
+helm install my-flowable .
 ```
 
 To install the *repo* chart with the release name `my-flowable`:
