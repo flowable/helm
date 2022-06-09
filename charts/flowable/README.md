@@ -46,7 +46,54 @@ helm remove my-flowable
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
-## Configuration
+## Signed Chart
+
+Starting with version 6.7.3 the Flowable Helm chart is signed.
+
+The public PGP key can be obtained via keyservers: [keybase.io](https://keybase.io/flowable_oss/pgp_keys.asc) and [pgp.mit.edu](https://pgp.mit.edu/pks/lookup?op=get&search=0xA79624786AE252EB).
+Or in this [repository](https://github.com/flowable/helm/blob/main/flowable_oss.asc).
+
+There are several tools that provide support for verifying the integrity and origin of the chart. Verifying manually can be done following the steps below.
+
+### Obtain Public Key
+
+Import key from keybase.io
+
+```
+curl https://keybase.io/flowable_oss/pgp_keys.asc | gpg --import
+```
+
+or
+
+Import key from pgp.mit.edu
+
+```
+gpg --keyserver pgp.mit.edu --recv-keys 6AE252EB
+```
+
+### Export Public Keyring in GPG format
+
+After importing the public key into your local keyring you need to export it to the `.gpg` format using the following command.
+
+```
+gpg --output pubring.gpg --export 6AE252EB
+```
+
+### Verify Signed Helm Chart
+
+Add the Flowable Helm chart this was not done yet.
+
+```
+helm repo add flowable-oss https://flowable.github.io/helm/
+```
+
+You can then use `helm fetch --verify` to verify the signed chart.
+
+```
+helm fetch --verify flowable_oss/flowable --version 6.7.3 --keyring pubring.gpg
+```
+
+## Chart Configuration
 
 The following tables lists the configurable parameters of the Unifi chart and their default values.
 
