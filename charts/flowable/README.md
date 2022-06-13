@@ -95,7 +95,7 @@ helm fetch --verify flowable_oss/flowable --version 6.7.3 --keyring pubring.gpg
 
 ## Chart Configuration
 
-The following tables lists the configurable parameters of the Unifi chart and their default values.
+The following tables lists the configurable parameters of the Flowable chart and their default values.
 
 | Parameter                                     | Description                                                                                                           | Default                       |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
