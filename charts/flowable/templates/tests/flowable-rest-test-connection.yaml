@@ -1,0 +1,15 @@
+{{- if .Values.rest.enabled }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "flowable.fullname" . }}-rest-test-connection"
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ["-q", "http://{{.Values.rest.admin.username}}:{{.Values.rest.admin.password}}@{{.Release.Name}}-{{.Values.rest.service.name}}:8080{{.Values.rest.contextPath}}/actuator/health"]
+  restartPolicy: Never
+{{- end }}
