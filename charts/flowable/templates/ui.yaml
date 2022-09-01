@@ -45,9 +45,9 @@ spec:
             httpHeaders:
             - name: Authorization
               value: Basic: {{-  printf "%s:%s" .Values.ui.admin.username .Values.ui.admin.password | b64enc }}
-          initialDelaySeconds: 60
-          timeoutSeconds: 10
-          failureThreshold: 10
+          initialDelaySeconds: {{ .Values.ui.livenessProbe.initialDelaySeconds }}
+          timeoutSeconds: {{ .Values.ui.livenessProbe.timeoutSeconds }}
+          failureThreshold: {{ .Values.ui.livenessProbe.failureThreshold }}
         envFrom:
         - configMapRef:
             name: {{ .Release.Name }}-{{ include "flowable.template" . }}-configmap

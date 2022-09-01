@@ -53,6 +53,10 @@ ui:
     admin:
       username: admin
       password: test
+  livenessProbe:
+    initialDelaySeconds: 60
+    timeoutSeconds: 10
+    failureThreshold: 10
 
 # Enable either Flowable UI or Flowable REST
 rest:
@@ -77,6 +81,10 @@ rest:
   admin:
     username: rest-admin
     password: test
+  livenessProbe:
+    initialDelaySeconds: 60
+    timeoutSeconds: 10
+    failureThreshold: 10
 
 postgres:
   enabled: true
