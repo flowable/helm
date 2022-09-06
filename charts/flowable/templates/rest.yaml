@@ -51,9 +51,9 @@ spec:
               ### generate new with; echo -n "<username:<passwd>" | base64
               #value: Basic cmVzdC1hZG1pbjp0ZXN0
               value: Basic: {{-  printf "%s:%s" .Values.rest.admin.username .Values.rest.admin.password | b64enc }}
-          initialDelaySeconds: 60
-          timeoutSeconds: 10
-          failureThreshold: 10
+          initialDelaySeconds: {{ .Values.rest.livenessProbe.initialDelaySeconds }}
+          timeoutSeconds: {{ .Values.rest.livenessProbe.timeoutSeconds }}
+          failureThreshold: {{ .Values.rest.livenessProbe.failureThreshold }}
         envFrom:
         - configMapRef:
             name: {{ .Release.Name }}-{{ include "flowable.template" . }}-configmap
