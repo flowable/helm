@@ -16,7 +16,6 @@ maintainers:
   - name: yvoswillens
     email: yvoswillens@gmail.com
 annotations:
-  artifacthub.io/prerelease: "true"
   artifacthub.io/images: |
     - name: Flowable UI
       image: flowable/flowable-ui:6.8.0
