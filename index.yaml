@@ -50,7 +50,6 @@ entries:
           url: https://link1.url
         - name: Flowable OSS website
           url: https://www.flowable.com/open-source
-      artifacthub.io/prerelease: "true"
       artifacthub.io/signKey: |
         fingerprint: B3B09108406A7DFE92757807A79624786AE252EB
         url: https://keybase.io/flowable_oss/pgp_keys.asc
