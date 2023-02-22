@@ -38,6 +38,7 @@ ui:
     repository: flowable/flowable-ui
     tag: 6.7.2
     pullPolicy: Always
+  priorityClassName: ~
   resources:
     requests:
       cpu: "100m"
@@ -70,6 +71,7 @@ rest:
     repository: flowable/flowable-rest
     tag: 6.7.2
     pullPolicy: Always
+  priorityClassName: ~
   resources:
     requests:
       cpu: "100m"

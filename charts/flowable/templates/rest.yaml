@@ -17,6 +17,9 @@ spec:
         app.kubernetes.io/name: {{ .Release.Name }}-{{ include "flowable.template" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      {{- if .Values.rest.priorityClassName }}
+      priorityClassName: {{ .Values.rest.priorityClassName }}
+      {{- end }}
       initContainers:
       {{- if .Values.postgres.enabled }}
       - name: check-db-ready
