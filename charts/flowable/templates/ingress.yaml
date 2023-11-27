@@ -21,6 +21,7 @@ metadata:
     {{- end }}
     kubernetes.io/ingress.class: "{{ .Values.ingress.class }}"
 spec:
+  ingressClassName: nginx
   rules:
   {{- if .Values.ingress.useHost }}
   - host: {{ .Values.host.external }}
