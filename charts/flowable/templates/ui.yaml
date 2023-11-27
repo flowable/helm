@@ -83,7 +83,6 @@ metadata:
   labels:
     {{ include "flowable.defaultlabels" . }}
 spec:
-  clusterIP: None
   selector:
     app.kubernetes.io/name: {{ .Release.Name }}-{{ include "flowable.template" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
