@@ -58,7 +58,7 @@ postgres:
   enabled: true
   service:
     name: flowable-postgres
-  image: postgres:9.6
+  image: postgres:11.6.10
   storage:
     storageClassName: "standard"
 #    storageClassName: "ssd"
