@@ -90,7 +90,7 @@ helm repo add flowable-oss https://flowable.github.io/helm/
 You can then use `helm fetch --verify` to verify the signed chart.
 
 ```
-helm fetch --verify flowable_oss/flowable --version 6.7.3 --keyring pubring.gpg
+helm fetch --verify flowable_oss/flowable --version 7.0.0 --keyring pubring.gpg
 ```
 
 ## Chart Configuration
@@ -110,20 +110,6 @@ The following tables lists the configurable parameters of the Flowable chart and
 | `ingress.useHost`                             | Enables host based routing using external `host.external` ( this must be a FQDN)                                           | `false`                            |
 | `ingress.class`                               | Ingress class name                  | `nginx`
 | `ingress.clusterIssuer`                               | Ingress cert manager cluster issuer                  | ``
-|<br/>|
-| `ui.enabled`                                | Enables Flowable UI (either enable Flowable UI or Flowable REST)                                                  | `false`                        |
-| `ui.replicas`                               | Number of replicated pods                                                                                             | `1`                           |
-| `ui.service.name`                           | Kubernetes service name                                                                                               | `flowable-ui`               |
-| `ui.contextPath`                             | Tomcat servlet mapping                                                                                                | `/`                           |
-| `ui.ingressPath`                            | Ingress path mapping                                                                                                  | `flowable-ui`               |
-| `ui.image.repository`                       | Docker image name                                                                                                     | `flowable/flowable-ui`      |
-| `ui.image.tag`                              | Docker tag name                                                                                                       | `latest`                      |
-| `ui.image.pullPolicy`                       | Docker pull policy                                                                                                    | `Always`                      |
-| `ui.resources.requests.cpu`                 | Kubernetes CPU request                                                                                                | `100m`                        |
-| `ui.resources.requests.memory`              | Kubernetes memory request                                                                                             | `1Gi`                         |
-| `ui.resources.limits.cpu`                   | Kubernetes CPU limit                                                                                                  | `1`                           |
-| `ui.resources.limits.memory`                | Kubernetes memory limit                                                                                               | `1Gi`                         |
-| `ui.resources.javaOpts`                     | JVM options                                                                                                           | `-Xmx1g -Xms1g`               |
 |<br/>|
 | `rest.enabled`                                | Enables Flowable REST (either enable Flowable UI or Flowable REST)                                                  | `true`                       |
 | `rest.replicas`                               | Number of replicated pods                                                                                             | `1`                           |
@@ -152,7 +138,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 ```console
 helm install my-flowable flowable-oss/flowable \
-  --set admin.enabled=false
+  --set postgres.enabled=false
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example;

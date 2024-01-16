@@ -60,15 +60,6 @@ Template default Ingress rules
 */}}
 {{- define "flowable.ingressRules" -}}
     paths:
-    {{- if .Values.ui.enabled  }}
-      - path: {{ .Values.ui.ingressPath }}
-        pathType: Prefix
-        backend:
-          service:
-            name: {{ .Release.Name }}-{{ .Values.ui.service.name }}
-            port:
-              number: 8080
-    {{- end }}
     {{- if .Values.rest.enabled }}
       - path: {{ .Values.rest.ingressPath }}
         pathType: Prefix

@@ -3,9 +3,9 @@ host:
   external: localhost
 # Global database name, user and password
 database:
-  name: flowable
-  username: flowable
-  password: flowable
+  name: &database-name flowable
+  username: &database-username flowable
+  password: &database-password flowable
   # specify to overwrite dynamic template values
   # datasourceDriverClassName:
   # datasourceUrl:
@@ -27,40 +27,8 @@ ingress:
   # clusterIssuer: "letsencrypt-prod"
 
 # Enable either Flowable UI or Flowable REST
-ui:
-  enabled: true
-  replicas: 1
-  service:
-    name: flowable-ui
-  contextPath: /flowable-ui
-  ingressPath: /
-  image:
-    repository: flowable/flowable-ui
-    tag: 6.7.2
-    pullPolicy: Always
-  resources:
-    requests:
-      cpu: "100m"
-      memory: "1Gi"
-    limits:
-      cpu: "1"
-      memory: "1Gi"
-  javaOpts: "-Xmx1g -Xms1g"
-  admin:
-    username: admin
-    password: test
-  idm:
-    admin:
-      username: admin
-      password: test
-  livenessProbe:
-    initialDelaySeconds: 60
-    timeoutSeconds: 10
-    failureThreshold: 10
-
-# Enable either Flowable UI or Flowable REST
 rest:
-  enabled: false
+  enabled: true
   replicas: 1
   service:
     name: flowable-rest
@@ -68,7 +36,7 @@ rest:
   ingressPath: /
   image:
     repository: flowable/flowable-rest
-    tag: 6.7.2
+    # tag:
     pullPolicy: Always
   resources:
     requests:
@@ -88,17 +56,12 @@ rest:
 
 postgres:
   enabled: true
-  service:
-    name: flowable-postgres
-  image: postgres:9.6
-  storage:
-    storageClassName: "standard"
-#    storageClassName: "ssd"
-    size: 1Gi
-  resources:
-    requests:
-      cpu: "100m"
-      memory: "1Gi"
-    limits:
-      cpu: "1000m"
-      memory: "1Gi"
+  nameOverride: postgres
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: 12.10.0
+  auth:
+    username: *database-username
+    password: *database-password
+    database: *database-name

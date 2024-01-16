@@ -1,5 +1,2 @@
-ui:
-  enabled: false
-
 rest:
   enabled: true

@@ -1,8 +1,8 @@
 apiVersion: v2
 name: flowable
-version: 6.7.3-snapshot.5
+version: 7.0.0
 description: A Flowable Helm chart for Kubernetes
-appVersion: 6.7.2
+appVersion: 7.0.0
 home: https://www.flowable.com/open-source
 icon: https://www.flowable.com/open-source/docs/img/logo.png
 sources:
@@ -15,13 +15,16 @@ keywords:
 maintainers:
   - name: yvoswillens
     email: yvoswillens@gmail.com
+dependencies:
+  - name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 12.10.0
+    condition: postgres.enabled
+    alias: postgres
 annotations:
-  artifacthub.io/prerelease: "true"
   artifacthub.io/images: |
-    - name: Flowable UI
-      image: flowable/flowable-ui:6.7.2
     - name: Flowable REST
-      image: flowable/flowable-rest:6.7.2
+      image: flowable/flowable-rest:7.0.0
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Flowable OSS repository
