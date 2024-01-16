@@ -3,9 +3,9 @@ host:
   external: localhost
 # Global database name, user and password
 database:
-  name: flowable
-  username: flowable
-  password: flowable
+  name: &database-name flowable
+  username: &database-username flowable
+  password: &database-password flowable
   # specify to overwrite dynamic template values
   # datasourceDriverClassName:
   # datasourceUrl:
@@ -62,6 +62,6 @@ postgres:
     repository: bitnami/postgresql
     tag: 12.10.0
   auth:
-    username: flowable
-    password: flowable
-    database: flowable
+    username: *database-username
+    password: *database-password
+    database: *database-name
