@@ -15,6 +15,12 @@ keywords:
 maintainers:
   - name: yvoswillens
     email: yvoswillens@gmail.com
+dependencies:
+  - name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 12.10.0
+    condition: postgres.enabled
+    alias: postgres
 annotations:
   artifacthub.io/prerelease: "true"
   artifacthub.io/images: |

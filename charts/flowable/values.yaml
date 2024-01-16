@@ -56,17 +56,12 @@ rest:
 
 postgres:
   enabled: true
-  service:
-    name: flowable-postgres
-  image: postgres:11.6.10
-  storage:
-    storageClassName: "standard"
-#    storageClassName: "ssd"
-    size: 1Gi
-  resources:
-    requests:
-      cpu: "100m"
-      memory: "1Gi"
-    limits:
-      cpu: "1000m"
-      memory: "1Gi"
+  nameOverride: postgres
+  image:
+    registry: docker.io
+    repository: bitnami/postgresql
+    tag: 12.10.0
+  auth:
+    username: flowable
+    password: flowable
+    database: flowable

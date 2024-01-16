@@ -112,7 +112,7 @@ data:
   SPRING_DATASOURCE_URL: {{ .Values.database.datasourceUrl | quote }}
   {{- else if .Values.postgres.enabled }}
   SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
-  SPRING_DATASOURCE_URL: jdbc:postgresql://{{ .Release.Name }}-{{ .Values.postgres.service.name }}:5432/{{ .Values.database.name }}
+  SPRING_DATASOURCE_URL: jdbc:postgresql://{{ .Release.Name }}-{{ .Values.postgres.nameOverride }}:5432/{{ .Values.flowable.database.name }}
   {{- else if .Values.cloudSql.enabled }}
   SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
   SPRING_DATASOURCE_URL: jdbc:postgresql://127.0.0.1:5432/{{ .Values.database.name }}
