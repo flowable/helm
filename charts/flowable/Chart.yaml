@@ -1,6 +1,6 @@
 apiVersion: v2
 name: flowable
-version: 7.0.0-beta.1
+version: 7.0.0
 description: A Flowable Helm chart for Kubernetes
 appVersion: 7.0.0
 home: https://www.flowable.com/open-source
@@ -22,7 +22,6 @@ dependencies:
     condition: postgres.enabled
     alias: postgres
 annotations:
-  artifacthub.io/prerelease: "true"
   artifacthub.io/images: |
     - name: Flowable REST
       image: flowable/flowable-rest:7.0.0
