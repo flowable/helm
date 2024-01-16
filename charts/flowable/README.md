@@ -90,7 +90,7 @@ helm repo add flowable-oss https://flowable.github.io/helm/
 You can then use `helm fetch --verify` to verify the signed chart.
 
 ```
-helm fetch --verify flowable_oss/flowable --version 6.7.3 --keyring pubring.gpg
+helm fetch --verify flowable_oss/flowable --version 7.0.0 --keyring pubring.gpg
 ```
 
 ## Chart Configuration
@@ -138,7 +138,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 ```console
 helm install my-flowable flowable-oss/flowable \
-  --set admin.enabled=false
+  --set postgres.enabled=false
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example;

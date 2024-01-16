@@ -127,7 +127,7 @@ helm repo add flowable-oss https://flowable.github.io/helm/
 
 helm repo update
 
-helm install my-flowable flowable-oss/flowable --version 6.7.3-snapshot.2 --devel \
+helm install my-flowable flowable-oss/flowable --version 7.0.0 --devel \
 --namespace flowable --create-namespace \
 --set host.external=<dns-label>westeurope.cloudapp.azure.com --set ingress.useHost=true \
 --set ingress.clusterIssuer=letsencrypt-prod \
@@ -143,12 +143,12 @@ kubectl get pods -n flowable -w
 
 When all pods are active and ready the application will be available on; 
 
-https://\<dns-label\>.westeurope.cloudapp.azure.com/flowable-ui
+https://\<dns-label\>.westeurope.cloudapp.azure.com/flowable-rest
 
 ### Default credentials
 
 The default credentials are;
 
-username: admin
+username: rest-admin
 
 password: test
