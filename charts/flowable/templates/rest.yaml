@@ -25,7 +25,7 @@ spec:
       {{- end }}
       containers:
       - name: {{ .Release.Name }}-{{ include "flowable.template" . }}
-        image: "{{ .Values.rest.image.repository }}:{{ .Values.rest.image.tag }}"
+        image: "{{ .Values.rest.image.repository }}:{{ default .Chart.AppVersion .Values.rest.image.tag }}"
         imagePullPolicy: {{ .Values.rest.image.pullPolicy }}
         ports:
         - containerPort: 8080
