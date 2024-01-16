@@ -3,6 +3,47 @@ entries:
   flowable:
   - annotations:
       artifacthub.io/images: |
+        - name: Flowable REST
+          image: flowable/flowable-rest:7.0.0
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Flowable OSS repository
+          url: https://link1.url
+        - name: Flowable OSS website
+          url: https://www.flowable.com/open-source
+      artifacthub.io/prerelease: "true"
+      artifacthub.io/signKey: |
+        fingerprint: B3B09108406A7DFE92757807A79624786AE252EB
+        url: https://keybase.io/flowable_oss/pgp_keys.asc
+    apiVersion: v2
+    appVersion: 7.0.0
+    created: "2024-01-16T13:21:32.400240724Z"
+    dependencies:
+    - alias: postgres
+      condition: postgres.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.10.0
+    description: A Flowable Helm chart for Kubernetes
+    digest: 52a761252c247dbd1bfb920faef0ef9053cdb223199429ac2218f7f5e6cd30e9
+    home: https://www.flowable.com/open-source
+    icon: https://www.flowable.com/open-source/docs/img/logo.png
+    keywords:
+    - flowable
+    - BPMN
+    - CMMN
+    - DMN
+    maintainers:
+    - email: yvoswillens@gmail.com
+      name: yvoswillens
+    name: flowable
+    sources:
+    - https://github.com/flowable/flowable-engine/
+    urls:
+    - https://github.com/flowable/helm/releases/download/flowable-7.0.0-beta.1/flowable-7.0.0-beta.1.tgz
+    version: 7.0.0-beta.1
+  - annotations:
+      artifacthub.io/images: |
         - name: Flowable UI
           image: flowable/flowable-ui:6.8.0
         - name: Flowable REST
@@ -233,4 +274,4 @@ entries:
     urls:
     - https://flowable.github.io/helm/flowable-6.5.0.tgz
     version: 6.5.0
-generated: "2022-12-30T10:30:26.80248753Z"
+generated: "2024-01-16T13:21:32.400331114Z"
