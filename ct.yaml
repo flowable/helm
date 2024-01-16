@@ -4,5 +4,6 @@ chart-dirs:
   - charts
 chart-repos:
   - flowable_oss=https://flowable.github.io/helm
+  - postgresql=https://charts.bitnami.com/bitnami
 check-version-increment: false
 helm-extra-args: --timeout 600s
