@@ -17,7 +17,7 @@ maintainers:
     email: yvoswillens@gmail.com
 dependencies:
   - name: postgresql
-    repository: oci://registry-1.docker.io/bitnamicharts/postgresql
+    repository: oci://registry-1.docker.io/bitnamicharts
     version: 16.0.1
     condition: postgres.enabled
     alias: postgres
