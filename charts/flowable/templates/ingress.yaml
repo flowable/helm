@@ -16,8 +16,8 @@ metadata:
     {{- if .Values.ingress.clusterIssuer }}
     cert-manager.io/cluster-issuer: "{{ .Values.ingress.clusterIssuer }}"
     {{- end }}
-    kubernetes.io/ingress.class: "{{ .Values.ingress.class }}"
 spec:
+  ingressClassName: "{{ .Values.ingress.class }}"
   rules:
   {{- if .Values.ingress.useHost }}
   - host: {{ .Values.host.external }}

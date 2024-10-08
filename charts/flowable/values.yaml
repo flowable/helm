@@ -57,10 +57,6 @@ rest:
 postgres:
   enabled: true
   nameOverride: postgres
-  image:
-    registry: docker.io
-    repository: bitnami/postgresql
-    tag: 12.10.0
   auth:
     username: *database-username
     password: *database-password

@@ -17,14 +17,14 @@ maintainers:
     email: yvoswillens@gmail.com
 dependencies:
   - name: postgresql
-    repository: https://charts.bitnami.com/bitnami
+    repository: oci://registry-1.docker.io/bitnamicharts
     version: 16.0.1
     condition: postgres.enabled
     alias: postgres
 annotations:
   artifacthub.io/images: |
     - name: Flowable REST
-      image: flowable/flowable-rest:7.0.0
+      image: flowable/flowable-rest:7.1.0
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Flowable OSS repository
