@@ -1,8 +1,8 @@
 apiVersion: v2
 name: flowable
-version: 7.0.1
+version: 7.1.0
 description: A Flowable Helm chart for Kubernetes
-appVersion: 7.0.1
+appVersion: 7.1.0
 home: https://www.flowable.com/open-source
 icon: https://www.flowable.com/open-source/docs/img/logo.png
 sources:
@@ -24,7 +24,7 @@ dependencies:
 annotations:
   artifacthub.io/images: |
     - name: Flowable REST
-      image: flowable/flowable-rest:7.0.0
+      image: flowable/flowable-rest:7.1.0
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Flowable OSS repository
