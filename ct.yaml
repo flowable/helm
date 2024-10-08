@@ -2,8 +2,5 @@ remote: origin
 target-branch: main
 chart-dirs:
   - charts
-chart-repos:
-  - flowable_oss=https://flowable.github.io/helm
-  - postgresql=oci://registry-1.docker.io/bitnamicharts
 check-version-increment: false
 helm-extra-args: --timeout 600s
