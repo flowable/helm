@@ -9,10 +9,10 @@ jobs:
       fail-fast: false
       matrix:
         kubernetesVersion: [
-          "v1.25.11",
-          "v1.26.6",
-          "v1.27.3",
-          "v1.28.0"
+          "v1.28.0",
+          "v1.29.8",
+          "v1.30.4",
+          "v1.31.0"
         ]
 
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
 
       - name: Create kind cluster
         if: steps.list-changed.outputs.changed == 'true'
-        uses: helm/kind-action@v1.8.0
+        uses: helm/kind-action@v1.10.0
         with:
           node_image: "kindest/node:${{ matrix.kubernetesVersion }}"
 
