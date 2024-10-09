@@ -1,0 +1,6 @@
+# Artifact Hub repository metadata file
+# Used to become verified publisher and more - https://artifacthub.io/docs/topics/repositories/#verified-publisher
+repositoryID: d675e6dc-52e3-4bed-ae57-2def9272fb8e
+owners:
+  - name: Yvo Swillens
+    email: yvoswillens@gmail.com
